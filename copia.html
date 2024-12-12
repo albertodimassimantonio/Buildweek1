@@ -145,11 +145,9 @@
         let contButtons = document.getElementById("contButtons")
         let countQ = document.querySelector(".questionNumber")
 
-
-        let NumberQuestion = 1;
+        let NumberQuestion = 0
         countQ.innerText = NumberQuestion + "/10"
-
-
+                
         let correntquestion = 0;
 
         function uploadquestion(){
@@ -168,7 +166,9 @@
                 
 
             })
-            
+                NumberQuestion++
+                countQ.innerText = NumberQuestion + "/10"
+
             }
 
             function control(clickAnswer){
