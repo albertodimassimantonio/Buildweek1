@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Timer Circolare</title>
+    
+</head>
+<body>
+    <div class="timer-container">
+        <div class="circle">
+            <span id="time">60</span> 
+            <span class="label">SECONDS<br>REMAINING</span>
+
+            
+        </div>
+    </div>
+
+    <button type="button" id="bottone"></button>
+    
+
+
+
+
+
+
+
+
+    <style>
+
+            
+    .circle span#time {
+    font-size: 3rem;
+    font-weight: bold;
+    z-index: 1;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #6a00ff, #9900ff);
+    color: white;
+}
+
+.timer-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+}
+
+.circle {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: conic-gradient(#00e0ff 0deg, #00e0ff 75%, #9900ff 0deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.circle .label {
+    position: absolute;
+    top: 65%;
+    text-align: center;
+    font-size: 0.8rem;
+    z-index: 1;
+    opacity: 0.8;
+}
+
+.circle::after {
+    content: "";
+    position: absolute;
+    width: 85%;
+    height: 85%;
+    background: #6a00ff;
+    border-radius: 50%;
+    z-index: 0;
+}
+
+</style>
+
+
+    <script>
+
+const timeElement = document.getElementById("time");
+    const resetButton = document.getElementById("bottone");
+    const circle = document.querySelector(".circle");
+
+    let duration = 30; // per camgiare la durata
+    const totalDuration = duration; 
+    let timer; 
+
+    function startTimer() {
+        timer = setInterval(() => {
+            duration--;
+
+            timeElement.textContent = duration;
+
+            const percentage = ((totalDuration - duration) / totalDuration) * 360;
+
+            circle.style.background = `conic-gradient(
+                #00e0ff ${percentage}deg,
+                #9900ff ${percentage}deg
+            )`;
+
+            if (duration <= 0) {
+                clearInterval(timer);
+                timeElement.textContent = "0";
+            }
+        }, 1000);
+    }
+
+    startTimer();
+
+    resetButton.addEventListener("click", () => {
+        clearInterval(timer); 
+        duration = 30; // 2. per cambiare la durata 
+        timeElement.textContent = duration; 
+        circle.style.background = `conic-gradient(#00e0ff 0deg, #9900ff 0deg)`; 
+        startTimer(); 
+    });    
+
+
+    </script>
+
+
+</body>
+
+
+
+</html>
