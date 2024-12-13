@@ -182,7 +182,7 @@
   const circle = document.querySelector(".circle");
   let containTimer = document.querySelector(".timer-container")
 
-  let duration = 5 // per camgiare la durata
+  let duration = 30 // per camgiare la durata
   const totalDuration = duration
   let timer 
   timeElement.textContent = duration
@@ -221,7 +221,7 @@
   function restartTimer(){
   uploadquestion()
   clearInterval(timer)
-  duration = 5
+  duration = 30
   timeElement.textContent = duration;
   startTimer()
   }
