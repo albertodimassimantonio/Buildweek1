@@ -1,0 +1,49 @@
+.circle span#time {
+    font-size: 3rem;
+    font-weight: bold;
+    z-index: 1;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #6a00ff, #9900ff);
+    color: white;
+}
+
+.timer-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+}
+
+.circle {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: conic-gradient(#00aeff00 0deg, #00e1ff00 0%, #9900ff 0deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.circle .label {
+    position: absolute;
+    top: 65%;
+    text-align: center;
+    font-size: 0.8rem;
+    z-index: 1;
+    opacity: 0.8;
+}
+
+.circle::after {
+    content: "";
+    position: absolute;
+    width: 85%;
+    height: 85%;
+    background: #6a00ff;
+    border-radius: 50%;
+    z-index: 0;
+}
