@@ -14,5 +14,5 @@ function proceed(){
 buttonProceed.addEventListener("click", loadQuiz)
 
 function loadQuiz(){
-    location.href ="#"
+    location.href ="indexBenchMark.html"
 }
