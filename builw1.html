@@ -1,0 +1,196 @@
+
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="">
+    <title>BENCHMARK</title>
+    <link rel="stylesheet" href="styleTimer.css">
+<body>
+   <div class="welcome">
+        <header>
+            <img src="assets/epicode_logo.png" alt="logo" class="epicodeLogo">
+
+            <div class="timer-container">
+              <div class="circle">
+                  <span id="time"></span> 
+                  <span class="label">SECONDS<br>REMAINING</span>
+              </div>
+            
+        </header>
+        <main>
+
+              
+              <div id="titleQuestiondiv">
+                <h1 id="titleQuestion"></h1>
+              </div>
+
+              
+              
+              <div id="container"></div> 
+              <div id="contButtons"></div>
+              <p id="pQuestionNumber">QUESTION <span class="questionNumber"></span> </p>                <!--per il CSS c'è anche l'extra la classe del paragrafo del risultato  è .result-->
+
+            </div>
+
+            <style>
+               
+
+
+
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh; 
+    background: url('bg.jpg') no-repeat center center fixed;
+    background-size: cover; 
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+#welcome {
+    text-align: center;
+    width: 90%;
+    max-width: 800px;
+    padding: 2rem;
+}
+
+
+.epicodeLogo {
+    width: 150px; 
+    position: fixed; 
+    top: 20px; 
+    left: 20px; 
+    z-index: 10; 
+}
+
+
+
+.timer-container {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    width: 120px;
+    height: 120px;
+}
+
+.circle {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: conic-gradient(#00e0ff 0deg, #9900ff 0deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+}
+
+.circle::after {
+    content: "";
+    position: absolute;
+    width: 85%;
+    height: 85%;
+    background: #1c0335;
+    border-radius: 50%;
+}
+
+.circle span#time {
+    font-size: 2.5rem;
+    font-weight: bold;
+    position: relative;
+    z-index: 2;
+}
+
+.circle .label {
+    position: absolute;
+    top: 65%;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #cccccc;
+    text-transform: uppercase;
+    z-index: 1;
+    opacity: 0.8;
+}
+
+
+
+
+#titleQuestiondiv {
+    margin-top: 3rem;
+}
+
+#titleQuestion {
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 2rem;
+}
+
+#contButtons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+#contButtons button {
+    background: #5432c3;
+    opacity: 60%;
+    border: 2px solid white;
+    color: white;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#contButtons button:hover {
+    background: #b80d7c;
+    border-color: white;
+    color: #fff;
+    opacity: 100%;
+}
+
+
+#pQuestionNumber {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    opacity: 0.9;
+}
+
+
+.result {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #00e0ff;
+    margin-top: 2rem;
+}
+
+
+
+            </style>
+        </main>
+
+    </div>
+
+
+</body>
+
+
+
+</html>
