@@ -169,6 +169,13 @@
   uploadquestion()
 
       function totResult(){
+             if(result >= 6){
+            title.innerText = "Exam Passed"
+
+            }else{
+              title.innerText = "Exam not passed"
+
+            }
               contButtons.style.display ="none"
               pQuestionNumber.style.display ="none"
               let contResult = document.createElement("p")
